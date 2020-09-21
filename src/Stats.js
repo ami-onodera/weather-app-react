@@ -4,7 +4,7 @@ import Emoji from "a11y-react-emoji";
 export default function Stats() {
   return (
     <div className="container-right">
-      <h3 id="current-date"></h3>
+      <h3 id="current-date">Date</h3>
       <div className="row">
         <div className="col">
           <div className="stats">

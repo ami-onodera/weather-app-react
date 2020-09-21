@@ -3,12 +3,12 @@ import Emoji from "a11y-react-emoji";
 
 export default function Forecast() {
   return (
-    <div class="row hour-bg" id="hour-forecast">
-      <div class="col-2 ml-1 md-1 hour">
+    <div className="row hour-bg" id="hour-forecast">
+      <div className="col-2 ml-1 md-1 hour">
         <p id="hour">
           <strong>22:00</strong>
         </p>
-        <p class="small-emoji">
+        <p className="small-emoji">
           <span>
             <Emoji symbol="🌈" label="description" />
           </span>
@@ -16,11 +16,11 @@ export default function Forecast() {
         <p></p>
       </div>
 
-      <div class="col-2 ml-1 md-1 hour">
+      <div className="col-2 ml-1 md-1 hour">
         <p id="hour">
           <strong>22:00</strong>
         </p>
-        <p class="small-emoji">
+        <p className="small-emoji">
           <span>
             <Emoji symbol="🌈" label="description" />
           </span>
@@ -28,11 +28,11 @@ export default function Forecast() {
         <p></p>
       </div>
 
-      <div class="col-2 ml-1 md-1 hour">
+      <div className="col-2 ml-1 md-1 hour">
         <p id="hour">
           <strong>22:00</strong>
         </p>
-        <p class="small-emoji">
+        <p className="small-emoji">
           <span>
             <Emoji symbol="🌈" label="description" />
           </span>
@@ -40,11 +40,11 @@ export default function Forecast() {
         <p></p>
       </div>
 
-      <div class="col-2 ml-1 md-1 hour">
+      <div className="col-2 ml-1 md-1 hour">
         <p id="hour">
           <strong>22:00</strong>
         </p>
-        <p class="small-emoji">
+        <p className="small-emoji">
           <span>
             <Emoji symbol="🌈" label="description" />
           </span>
@@ -52,11 +52,11 @@ export default function Forecast() {
         <p></p>
       </div>
 
-      <div class="col-2 ml-1 md-1 hour">
+      <div className="col-2 ml-1 md-1 hour">
         <p id="hour">
           <strong>22:00</strong>
         </p>
-        <p class="small-emoji">
+        <p className="small-emoji">
           <span>
             <Emoji symbol="🌈" label="description" />
           </span>

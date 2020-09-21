@@ -25,16 +25,16 @@ export default function App() {
             <Search />
           </div>
 
-          <div class="container hourly-forecast">
+          <div className="container hourly-forecast">
             <Forecast />
           </div>
         </div>
       </div>
-      <div class="byAmi">
+      <div className="byAmi">
         <p>
           Made with{" "}
           <span>
-            <Emoji sumbol="💜" label="love" />
+            <Emoji symbol="💜" label="love" />
           </span>{" "}
           by{" "}
           <a
