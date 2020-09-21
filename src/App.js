@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./styles.css";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
+import Temperature from "./Temperature";
+import Stats from "./Stats";
+import Search from "./Search";
+import Forecast from "./Forecast";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="container">
+      <div className="outer-container" id="background-image">
+        <div className="row">
+          <div className="col-7 left-side">
+            <Temperature />
+          </div>
+          <div className="col-5 right-side">
+            <Stats />
+          </div>
+
+          <div className="container">
+            <Search />
+          </div>
+
+          <div class="container hourly-forecast">
+            <Forecast />
+          </div>
+        </div>
+      </div>
+      <div class="byAmi">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Made with <span>💜</span> by{" "}
+          <a
+            href="https://github.com/ami-onodera/weather-forecast"
+            target="blank"
+          >
+            {" "}
+            Ami Onodera
+          </a>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
     </div>
   );
 }
-
-export default App;
