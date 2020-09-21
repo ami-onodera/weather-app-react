@@ -13,13 +13,14 @@ export default function Temperature() {
           <span id="temp-number">25</span>
         </h1>
         <p>
-          <a href="#" id="celsius-link">
+          °C | °F
+          {/* <a href="#" id="celsius-link">
             °C
           </a>{" "}
           |
           <a href="#" id="fahrenheit-link">
             °F
-          </a>
+          </a> */}
         </p>
       </div>
       <h5 id="feels-like">Feels like 24°C</h5>
