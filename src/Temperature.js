@@ -1,4 +1,5 @@
 import React from "react";
+import Emoji from "a11y-react-emoji";
 
 export default function Temperature() {
   return (
@@ -6,7 +7,10 @@ export default function Temperature() {
       <h3 id="current-city">Pallet Town</h3>
       <div className="celsius-fahrenheit">
         <h1>
-          <span id="temp-emoji">🌈</span> <span id="temp-number">25</span>
+          <span id="temp-emoji">
+            <Emoji symbol="🌈" label="description" />
+          </span>{" "}
+          <span id="temp-number">25</span>
         </h1>
         <p>
           <a href="#" id="celsius-link">

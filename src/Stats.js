@@ -1,4 +1,5 @@
 import React from "react";
+import Emoji from "a11y-react-emoji";
 
 export default function Stats() {
   return (
@@ -8,7 +9,9 @@ export default function Stats() {
         <div className="col">
           <div className="stats">
             <p id="big-emoji">
-              <span>💧</span>
+              <span>
+                <Emoji symbol="💧" label="humidity" />
+              </span>
             </p>
             <p id="humidity">55%</p>
           </div>
@@ -16,7 +19,9 @@ export default function Stats() {
         <div className="col">
           <div className="stats">
             <p id="big-emoji">
-              <span>💨</span>
+              <span>
+                <Emoji symbol="💨" label="wind" />
+              </span>
             </p>
             <p id="windspeed">2km/h</p>
           </div>

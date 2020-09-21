@@ -1,4 +1,5 @@
 import React from "react";
+import Emoji from "a11y-react-emoji";
 
 export default function Forecast() {
   return (
@@ -8,7 +9,9 @@ export default function Forecast() {
           <strong>22:00</strong>
         </p>
         <p class="small-emoji">
-          <span>🌈</span>
+          <span>
+            <Emoji symbol="🌈" label="description" />
+          </span>
         </p>
         <p></p>
       </div>
@@ -18,7 +21,9 @@ export default function Forecast() {
           <strong>22:00</strong>
         </p>
         <p class="small-emoji">
-          <span>🌈</span>
+          <span>
+            <Emoji symbol="🌈" label="description" />
+          </span>
         </p>
         <p></p>
       </div>
@@ -28,7 +33,9 @@ export default function Forecast() {
           <strong>22:00</strong>
         </p>
         <p class="small-emoji">
-          <span>🌈</span>
+          <span>
+            <Emoji symbol="🌈" label="description" />
+          </span>
         </p>
         <p></p>
       </div>
@@ -38,7 +45,9 @@ export default function Forecast() {
           <strong>22:00</strong>
         </p>
         <p class="small-emoji">
-          <span>🌈</span>
+          <span>
+            <Emoji symbol="🌈" label="description" />
+          </span>
         </p>
         <p></p>
       </div>
@@ -48,7 +57,9 @@ export default function Forecast() {
           <strong>22:00</strong>
         </p>
         <p class="small-emoji">
-          <span>🌈</span>
+          <span>
+            <Emoji symbol="🌈" label="description" />
+          </span>
         </p>
         <p></p>
       </div>

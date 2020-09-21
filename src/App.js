@@ -7,6 +7,7 @@ import Temperature from "./Temperature";
 import Stats from "./Stats";
 import Search from "./Search";
 import Forecast from "./Forecast";
+import Emoji from "a11y-react-emoji";
 
 export default function App() {
   return (
@@ -31,7 +32,11 @@ export default function App() {
       </div>
       <div class="byAmi">
         <p>
-          Made with <span>💜</span> by{" "}
+          Made with{" "}
+          <span>
+            <Emoji sumbol="💜" label="love" />
+          </span>{" "}
+          by{" "}
           <a
             href="https://github.com/ami-onodera/weather-forecast"
             target="blank"
