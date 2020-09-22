@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Kalam:wght@300;400;700&display=swap");
 
-body {
-  background-color: #bebdce;
-}
-
 .outer-container {
   background-image: url("./img/city_buildings2.svg");
   max-width: 900px;
@@ -13,9 +9,7 @@ body {
   box-shadow: -1px 0px 9px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   background-color: #f0f0fa;
-  /* background-image: url("/img/rain.png"); */
   background-repeat: no-repeat;
-  /* background-position: right top; */
   background-position: center;
   background-size: contain, cover;
   font-family: "Kalam";
