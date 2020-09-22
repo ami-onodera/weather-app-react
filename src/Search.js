@@ -23,7 +23,7 @@ export default function Search() {
                 type="submit"
                 id="button-addon2"
               >
-                <i className="fas fa-search"></i>
+                <i class="fas fa-search"></i>
               </button>
             </div>
           </div>
