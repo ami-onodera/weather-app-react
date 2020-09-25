@@ -1,30 +1,186 @@
-import React from "react";
+import React, { useState } from "react";
 import Emoji from "a11y-react-emoji";
+import axios from "axios";
 
 export default function Temperature() {
-  return (
-    <div className="container-left">
-      <h3 id="current-city">Pallet Town</h3>
-      <div className="celsius-fahrenheit">
-        <h1>
-          <span id="temp-emoji">
-            <Emoji symbol="🌈" label="description" />
-          </span>{" "}
-          <span id="temp-number">25</span>
-        </h1>
-        <p>
-          °C | °F
-          {/* <a href="#" id="celsius-link">
-            °C
-          </a>{" "}
-          |
-          <a href="#" id="fahrenheit-link">
-            °F
-          </a> */}
-        </p>
+  const [weatherData, setWeatherData] = useState({ ready: false });
+
+  function handleResponse(response) {
+    console.log(response.data);
+    setWeatherData({
+      ready: true,
+      temperature: response.data.main.temp,
+      city: response.data.name,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      description: response.data.weather[0].description,
+      date: "Friday 16:00",
+    });
+  }
+
+  if (weatherData.ready) {
+    return (
+      <div className="outer-container" id="background-image">
+        <div className="row">
+          <div className="col-7 left-side">
+            <div className="container-left">
+              <h3 id="current-city">{weatherData.city}</h3>
+              <div className="celsius-fahrenheit">
+                <h1>
+                  <span id="temp-emoji">
+                    <Emoji symbol="🌈" label="description" />
+                  </span>{" "}
+                  <span id="temp-number">
+                    {Math.round(weatherData.temperature)}
+                  </span>
+                </h1>
+                <p>
+                  °C | °F
+                  {/* <a href="#" id="celsius-link">
+              °C
+            </a>{" "}
+            |
+            <a href="#" id="fahrenheit-link">
+              °F
+            </a> */}
+                </p>
+              </div>
+              <h5 id="feels-like">Feels like 24°C</h5>
+              <h3 class="text-capitalize" id="weather-description">
+                {weatherData.description}
+              </h3>
+            </div>
+          </div>
+          <div className="col-5 right-side">
+            <div className="container-right">
+              <h3 id="current-date">{weatherData.date}</h3>
+              <div className="row">
+                <div className="col">
+                  <div className="stats">
+                    <p id="big-emoji">
+                      <span>
+                        <Emoji symbol="💧" label="humidity" />
+                      </span>
+                    </p>
+                    <p id="humidity">{weatherData.humidity}%</p>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="stats">
+                    <p id="big-emoji">
+                      <span>
+                        <Emoji symbol="💨" label="wind" />
+                      </span>
+                    </p>
+                    <p id="windspeed">{weatherData.wind}km/h</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="container">
+            <div>
+              <button id="current-city-button" className="current-city-button">
+                Current City
+              </button>
+              <form id="search-form">
+                <div className="search-bar">
+                  <div className="input-group mb-3">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Search another city"
+                      aria-label="search"
+                      aria-describedby="button-addon2"
+                      id="search-bar"
+                    />
+                    <div className="input-group-append">
+                      <button
+                        className="btn btn-secondary"
+                        type="submit"
+                        id="button-addon2"
+                      >
+                        <i className="fas fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div className="container hourly-forecast">
+            <div className="row hour-bg" id="hour-forecast">
+              <div className="col-2 ml-1 md-1 hour">
+                <p id="hour">
+                  <strong>22:00</strong>
+                </p>
+                <p className="small-emoji">
+                  <span>
+                    <Emoji symbol="🌈" label="description" />
+                  </span>
+                </p>
+                <p></p>
+              </div>
+
+              <div className="col-2 ml-1 md-1 hour">
+                <p id="hour">
+                  <strong>22:00</strong>
+                </p>
+                <p className="small-emoji">
+                  <span>
+                    <Emoji symbol="🌈" label="description" />
+                  </span>
+                </p>
+                <p></p>
+              </div>
+
+              <div className="col-2 ml-1 md-1 hour">
+                <p id="hour">
+                  <strong>22:00</strong>
+                </p>
+                <p className="small-emoji">
+                  <span>
+                    <Emoji symbol="🌈" label="description" />
+                  </span>
+                </p>
+                <p></p>
+              </div>
+
+              <div className="col-2 ml-1 md-1 hour">
+                <p id="hour">
+                  <strong>22:00</strong>
+                </p>
+                <p className="small-emoji">
+                  <span>
+                    <Emoji symbol="🌈" label="description" />
+                  </span>
+                </p>
+                <p></p>
+              </div>
+
+              <div className="col-2 ml-1 md-1 hour">
+                <p id="hour">
+                  <strong>22:00</strong>
+                </p>
+                <p className="small-emoji">
+                  <span>
+                    <Emoji symbol="🌈" label="description" />
+                  </span>
+                </p>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <h5 id="feels-like">Feels like 24°C</h5>
-      <h3 id="weather-description">Double Rainbow</h3>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "e58056dbe2936b35eaec505d63e7a608";
+    let city = "Berlin";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return "Loading...";
+  }
 }

@@ -12,24 +12,7 @@ import Emoji from "a11y-react-emoji";
 export default function App() {
   return (
     <div className="container">
-      <div className="outer-container" id="background-image">
-        <div className="row">
-          <div className="col-7 left-side">
-            <Temperature />
-          </div>
-          <div className="col-5 right-side">
-            <Stats />
-          </div>
-
-          <div className="container">
-            <Search />
-          </div>
-
-          <div className="container hourly-forecast">
-            <Forecast />
-          </div>
-        </div>
-      </div>
+      <Temperature />
       <div className="byAmi">
         <p>
           Made with{" "}
