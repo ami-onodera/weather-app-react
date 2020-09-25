@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import Emoji from "a11y-react-emoji";
 import axios from "axios";
 
@@ -6,7 +7,7 @@ export default function Temperature() {
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
-    console.log(response.data);
+    // console.log(response.data);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
@@ -14,7 +15,7 @@ export default function Temperature() {
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      date: "Friday 16:00",
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -46,14 +47,16 @@ export default function Temperature() {
                 </p>
               </div>
               <h5 id="feels-like">Feels like 24°C</h5>
-              <h3 class="text-capitalize" id="weather-description">
+              <h3 className="text-capitalize" id="weather-description">
                 {weatherData.description}
               </h3>
             </div>
           </div>
           <div className="col-5 right-side">
             <div className="container-right">
-              <h3 id="current-date">{weatherData.date}</h3>
+              <h3 id="current-date">
+                <FormattedDate date={weatherData.date} />
+              </h3>
               <div className="row">
                 <div className="col">
                   <div className="stats">
