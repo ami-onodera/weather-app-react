@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import FormattedDate from "./FormattedDate";
 import Emoji from "a11y-react-emoji";
 import axios from "axios";
+import Stats from "./Stats";
 
 export default function Temperature() {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -52,35 +52,7 @@ export default function Temperature() {
               </h3>
             </div>
           </div>
-          <div className="col-5 right-side">
-            <div className="container-right">
-              <h3 id="current-date">
-                <FormattedDate date={weatherData.date} />
-              </h3>
-              <div className="row">
-                <div className="col">
-                  <div className="stats">
-                    <p id="big-emoji">
-                      <span>
-                        <Emoji symbol="💧" label="humidity" />
-                      </span>
-                    </p>
-                    <p id="humidity">{weatherData.humidity}%</p>
-                  </div>
-                </div>
-                <div className="col">
-                  <div className="stats">
-                    <p id="big-emoji">
-                      <span>
-                        <Emoji symbol="💨" label="wind" />
-                      </span>
-                    </p>
-                    <p id="windspeed">{weatherData.wind}km/h</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Stats data={weatherData} />
           <div className="container">
             <div>
               <button id="current-city-button" className="current-city-button">
