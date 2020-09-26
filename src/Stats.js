@@ -27,7 +27,7 @@ export default function Stats(props) {
                   <Emoji symbol="💨" label="wind" />
                 </span>
               </p>
-              <p id="windspeed">{props.data.wind}/h</p>
+              <p id="windspeed">{props.data.wind}km/h</p>
             </div>
           </div>
         </div>

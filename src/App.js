@@ -9,7 +9,7 @@ import Emoji from "a11y-react-emoji";
 export default function App() {
   return (
     <div className="container">
-      <Temperature />
+      <Temperature defaultCity="Berlin" />
       <div className="byAmi">
         <p>
           Made with{" "}
