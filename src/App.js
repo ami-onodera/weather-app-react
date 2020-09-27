@@ -3,13 +3,13 @@ import "./styles.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Temperature from "./Temperature";
+import Weather from "./Weather";
 import Emoji from "a11y-react-emoji";
 
 export default function App() {
   return (
     <div className="container">
-      <Temperature defaultCity="Berlin" />
+      <Weather defaultCity="Berlin" />
       <div className="byAmi">
         <p>
           Made with{" "}

@@ -4,7 +4,7 @@ import axios from "axios";
 import Stats from "./Stats";
 import WeatherIcon from "./WeatherIcon";
 
-export default function Temperature(props) {
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
