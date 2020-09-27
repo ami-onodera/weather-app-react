@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Emoji from "a11y-react-emoji";
 import axios from "axios";
 import Stats from "./Stats";
 import WeatherIcon from "./WeatherIcon";
 import Temperature from "./Temperature";
+import Forecast from "./Forecast";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -93,67 +93,7 @@ export default function Weather(props) {
           </div>
 
           <div className="container hourly-forecast">
-            <div className="row hour-bg" id="hour-forecast">
-              <div className="col-2 ml-1 md-1 hour">
-                <p id="hour">
-                  <strong>22:00</strong>
-                </p>
-                <p className="small-emoji">
-                  <span>
-                    <Emoji symbol="🌈" label="description" />
-                  </span>
-                </p>
-                <p></p>
-              </div>
-
-              <div className="col-2 ml-1 md-1 hour">
-                <p id="hour">
-                  <strong>22:00</strong>
-                </p>
-                <p className="small-emoji">
-                  <span>
-                    <Emoji symbol="🌈" label="description" />
-                  </span>
-                </p>
-                <p></p>
-              </div>
-
-              <div className="col-2 ml-1 md-1 hour">
-                <p id="hour">
-                  <strong>22:00</strong>
-                </p>
-                <p className="small-emoji">
-                  <span>
-                    <Emoji symbol="🌈" label="description" />
-                  </span>
-                </p>
-                <p></p>
-              </div>
-
-              <div className="col-2 ml-1 md-1 hour">
-                <p id="hour">
-                  <strong>22:00</strong>
-                </p>
-                <p className="small-emoji">
-                  <span>
-                    <Emoji symbol="🌈" label="description" />
-                  </span>
-                </p>
-                <p></p>
-              </div>
-
-              <div className="col-2 ml-1 md-1 hour">
-                <p id="hour">
-                  <strong>22:00</strong>
-                </p>
-                <p className="small-emoji">
-                  <span>
-                    <Emoji symbol="🌈" label="description" />
-                  </span>
-                </p>
-                <p></p>
-              </div>
-            </div>
+            <Forecast city={weatherData.city} />
           </div>
         </div>
       </div>
