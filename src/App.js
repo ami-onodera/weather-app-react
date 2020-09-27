@@ -14,7 +14,7 @@ export default function App() {
         <p>
           Made with{" "}
           <span>
-            <Emoji symbol="💜" label="love" />
+            <Emoji symbol="💙" label="love" />
           </span>{" "}
           by{" "}
           <a
