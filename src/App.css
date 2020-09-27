@@ -131,6 +131,14 @@
   color: #008ce2;
 }
 
+#celsius-link {
+  text-decoration: none;
+}
+
+#fahrenheit-link {
+  text-decoration: none;
+}
+
 .byAmi {
   text-align: center;
   color: #1a4559;

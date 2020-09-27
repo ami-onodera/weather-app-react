@@ -3,6 +3,7 @@ import Emoji from "a11y-react-emoji";
 import axios from "axios";
 import Stats from "./Stats";
 import WeatherIcon from "./WeatherIcon";
+import Temperature from "./Temperature";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -49,20 +50,8 @@ export default function Weather(props) {
                   <span id="temp-icon">
                     <WeatherIcon code={weatherData.icon} />
                   </span>{" "}
-                  <span id="temp-number">
-                    {Math.round(weatherData.temperature)}
-                  </span>
                 </h1>
-                <p>
-                  °C | °F
-                  {/* <a href="#" id="celsius-link">
-              °C
-            </a>{" "}
-            |
-            <a href="#" id="fahrenheit-link">
-              °F
-            </a> */}
-                </p>
+                <Temperature celsius={weatherData.temperature} />
               </div>
               <h5 id="feels-like">Feels like 24°C</h5>
               <h3 className="text-capitalize" id="weather-description">
