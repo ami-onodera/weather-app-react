@@ -53,7 +53,7 @@ export default function Weather(props) {
                 </h1>
                 <Temperature celsius={weatherData.temperature} />
               </div>
-              <h5 id="feels-like">Feels like 24°C</h5>
+              {/* <h5 id="feels-like">Feels like 24°C</h5> */}
               <h3 className="text-capitalize" id="weather-description">
                 {weatherData.description}
               </h3>
