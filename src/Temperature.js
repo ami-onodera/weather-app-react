@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Emoji from "a11y-react-emoji";
 import axios from "axios";
 import Stats from "./Stats";
+import WeatherIcon from "./WeatherIcon";
 
 export default function Temperature(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -17,6 +18,7 @@ export default function Temperature(props) {
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
+      icon: response.data.weather[0].icon,
     });
   }
 
@@ -44,8 +46,8 @@ export default function Temperature(props) {
               <h3 id="current-city">{weatherData.city}</h3>
               <div className="celsius-fahrenheit">
                 <h1>
-                  <span id="temp-emoji">
-                    <Emoji symbol="🌈" label="description" />
+                  <span id="temp-icon">
+                    <WeatherIcon code={weatherData.icon} />
                   </span>{" "}
                   <span id="temp-number">
                     {Math.round(weatherData.temperature)}
