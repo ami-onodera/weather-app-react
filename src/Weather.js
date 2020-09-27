@@ -62,9 +62,6 @@ export default function Weather(props) {
           <Stats data={weatherData} />
           <div className="container">
             <div>
-              <button id="current-city-button" className="current-city-button">
-                Current City
-              </button>
               <form onSubmit={handleSubmit} id="search-form">
                 <div className="search-bar">
                   <div className="input-group mb-3">

@@ -1,18 +1,29 @@
 import React from "react";
-import Emoji from "a11y-react-emoji";
+import WeatherIcon from "./WeatherIcon";
+import "./hourforecast.css";
 
-export default function HourForecast() {
+export default function HourForecast(props) {
+  function hours() {
+    let date = new Date(props.data.dt * 1000);
+    let hours = date.getHours();
+    return `${hours}:00`;
+  }
+
+  function temperature() {
+    let temperature = Math.round(props.data.main.temp);
+
+    return `${temperature}°C`;
+  }
+
   return (
     <div className="col-2 ml-1 md-1 hour">
       <p id="hour">
-        <strong>22:00</strong>
+        <strong>{hours()}</strong>
       </p>
-      <p className="small-emoji">
-        <span>
-          <Emoji symbol="🌈" label="description" />
-        </span>
+      <p className="small-icon">
+        <WeatherIcon code={props.data.weather[0].icon} />
       </p>
-      <p></p>
+      <p id="hour-temperature">{temperature()}</p>
     </div>
   );
 }

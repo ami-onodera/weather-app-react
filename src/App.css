@@ -54,39 +54,9 @@
   margin-left: 25px;
 }
 
-.hour {
-  display: block;
-  margin: 0 auto;
-  background-color: rgb(255 255 255 / 0.26);
-  border-radius: 20px;
-  text-align: center;
-}
-
-.hour p {
-  line-height: 35px;
-}
-
-.hour-bg {
-  margin: 30px;
-}
-
-.hour-forecast {
-  margin-left: 20px;
-}
-
 .search-bar {
   width: 60%;
   margin-left: 20%;
-}
-
-.current-city-button {
-  margin-left: 20%;
-  margin-bottom: 5px;
-  background-color: #1a4559;
-  border: 1px solid #1a4559;
-  padding: 5px 15px;
-  border-radius: 5px;
-  color: white;
 }
 
 #big-emoji {
@@ -101,10 +71,6 @@
 .small-emoji {
   font-size: 50px;
   margin: 0px;
-}
-
-#current-city {
-  display: block;
 }
 
 .stats {
@@ -157,13 +123,3 @@
 .byAmi a:hover {
   color: #008ce2;
 }
-
-/* 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

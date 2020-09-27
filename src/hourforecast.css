@@ -1,0 +1,33 @@
+.small-icon canvas {
+  width: 50px;
+  margin: 0px;
+}
+
+p.small-icon {
+  margin-bottom: 0px;
+  height: 50px;
+}
+
+.hour {
+  display: block;
+  margin: 0 auto;
+  background-color: rgb(255 255 255 / 0.26);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.hour-bg {
+  margin: 30px;
+}
+
+.hour-forecast {
+  margin-left: 20px;
+}
+
+#hour {
+  margin-bottom: 0px;
+}
+
+#hour-temperature {
+  margin: 0px;
+}

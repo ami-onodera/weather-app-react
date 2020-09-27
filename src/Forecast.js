@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Emoji from "a11y-react-emoji";
-
 import HourForecast from "./HourForecast";
+import "./hourforecast.css";
 
 export default function Forecast(props) {
   const [loaded, setLoaded] = useState(false);
   const [forecast, setForecast] = useState(null);
 
   function handleForecastResponse(response) {
-    setLoaded(true);
     setForecast(response.data);
+    setLoaded(true);
   }
-  if (loaded) {
+  if (loaded && props.city === forecast.city.name) {
     return (
       <div className="row hour-bg" id="hour-forecast">
-        <HourForecast />
+        <HourForecast data={forecast.list[0]} />
+        <HourForecast data={forecast.list[1]} />
+        <HourForecast data={forecast.list[2]} />
+        <HourForecast data={forecast.list[3]} />
+        <HourForecast data={forecast.list[4]} />
       </div>
     );
   } else {
